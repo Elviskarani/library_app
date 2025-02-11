@@ -8,3 +8,113 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ /* app/assets/stylesheets/application.css */
+ /* Add these styles to your existing CSS */
+ 
+ .navbar {
+   background-color: #333;
+   padding: 1rem;
+   margin-bottom: 2rem;
+ }
+ 
+ .navbar-brand {
+   font-size: 1.5rem;
+   color: white;
+ }
+ 
+ .navbar-menu a {
+   color: white;
+   text-decoration: none;
+   margin-left: 1rem;
+ }
+
+ .navbar-menu .button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: purple;
+  cursor: pointer;
+  font: inherit;
+}
+
+.navbar-menu .button:hover {
+  text-decoration: underline;
+}
+ 
+ .container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 1rem;
+ }
+ 
+ .button {
+   display: inline-block;
+   padding: 0.5rem 1rem;
+   background-color: #007bff;
+   color: white;
+   text-decoration: none;
+   border-radius: 4px;
+   border: none;
+   cursor: pointer;
+ }
+ 
+ .button:hover {
+   background-color: #0056b3;
+ }
+ 
+ .return-button {
+   background-color: #dc3545;
+ }
+ 
+ .borrow-button {
+   background-color: #28a745;
+ }
+ 
+ .available {
+   color: #28a745;
+ }
+ 
+ .unavailable {
+   color: #dc3545;
+ }
+ 
+ .overdue {
+   color: #dc3545;
+   font-weight: bold;
+ }
+ 
+ table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-bottom: 1rem;
+ }
+ 
+ th, td {
+   padding: 0.75rem;
+   border-bottom: 1px solid #dee2e6;
+   text-align: left;
+ }
+ 
+ .field {
+   margin-bottom: 1rem;
+ }
+ 
+ .field label {
+   display: block;
+   margin-bottom: 0.5rem;
+ }
+ 
+ .field input {
+   width: 100%;
+   padding: 0.5rem;
+   border: 1px solid #dee2e6;
+   border-radius: 4px;
+ }
+ 
+ .error-messages {
+   color: #dc3545;
+   margin-bottom: 1rem;
+   padding: 1rem;
+   border: 1px solid #dc3545;
+   border-radius: 4px;
+ }
