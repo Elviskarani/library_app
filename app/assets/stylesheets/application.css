@@ -1,120 +1,239 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
- /* app/assets/stylesheets/application.css */
- /* Add these styles to your existing CSS */
- 
- .navbar {
-   background-color: #333;
-   padding: 1rem;
-   margin-bottom: 2rem;
- }
- 
- .navbar-brand {
-   font-size: 1.5rem;
-   color: white;
- }
- 
- .navbar-menu a {
-   color: white;
-   text-decoration: none;
-   margin-left: 1rem;
- }
+/* Core Layout & Typography */
+:root {
+  --primary: #4a90e2;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --text: #2c3e50;
+  --background: #f8f9fa;
+  --border: #e1e8ed;
+}
 
- .navbar-menu .button {
-  background: none;
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--background);
+  margin: 0;
+}
+
+/* Enhanced Navigation */
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar-menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar-menu a:hover {
+  color: var(--primary);
+}
+
+/* Container & Content */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* Improved Tables */
+table {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin: 1.5rem 0;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Enhanced Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
   border: none;
-  padding: 0;
-  color: purple;
   cursor: pointer;
-  font: inherit;
 }
 
-.navbar-menu .button:hover {
-  text-decoration: underline;
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
- 
- .container {
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 0 1rem;
- }
- 
- .button {
-   display: inline-block;
-   padding: 0.5rem 1rem;
-   background-color: #007bff;
-   color: white;
-   text-decoration: none;
-   border-radius: 4px;
-   border: none;
-   cursor: pointer;
- }
- 
- .button:hover {
-   background-color: #0056b3;
- }
- 
- .return-button {
-   background-color: #dc3545;
- }
- 
- .borrow-button {
-   background-color: #28a745;
- }
- 
- .available {
-   color: #28a745;
- }
- 
- .unavailable {
-   color: #dc3545;
- }
- 
- .overdue {
-   color: #dc3545;
-   font-weight: bold;
- }
- 
- table {
-   width: 100%;
-   border-collapse: collapse;
-   margin-bottom: 1rem;
- }
- 
- th, td {
-   padding: 0.75rem;
-   border-bottom: 1px solid #dee2e6;
-   text-align: left;
- }
- 
- .field {
-   margin-bottom: 1rem;
- }
- 
- .field label {
-   display: block;
-   margin-bottom: 0.5rem;
- }
- 
- .field input {
-   width: 100%;
-   padding: 0.5rem;
-   border: 1px solid #dee2e6;
-   border-radius: 4px;
- }
- 
- .error-messages {
-   color: #dc3545;
-   margin-bottom: 1rem;
-   padding: 1rem;
-   border: 1px solid #dc3545;
-   border-radius: 4px;
- }
+
+.borrow-button {
+  background-color: var(--success);
+  color: white;
+}
+
+.return-button {
+  background-color: var(--danger);
+  color: white;
+}
+
+/* Status Indicators */
+.available {
+  color: var(--success);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.available::before {
+  content: "●";
+  font-size: 0.75rem;
+}
+
+.unavailable {
+  color: var(--danger);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.unavailable::before {
+  content: "●";
+  font-size: 0.75rem;
+}
+
+.overdue {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* Forms */
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.field input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Error Messages */
+.error-messages {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-messages h2 {
+  color: var(--danger);
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.error-messages ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* Alerts */
+.notice, .alert {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.notice {
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid var(--success);
+  color: var(--success);
+}
+
+.alert {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+/* Book Details Page */
+.book-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.book-info {
+  margin: 1.5rem 0;
+}
+
+.book-info p {
+  margin: 0.5rem 0;
+}
+
+.actions {
+  margin-top: 2rem;
+}
+
+/* Section Headers */
+h1, h2 {
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}

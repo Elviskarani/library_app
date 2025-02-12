@@ -1,6 +1,7 @@
-# app/views/books/new.html.erb
+
 <h1>Add New Book</h1>
 
+# app/views/books/new.html.erb
 <%= form_with(model: @book, local: true) do |form| %>
   <% if @book.errors.any? %>
     <div class="error-messages">
